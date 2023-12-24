@@ -84,13 +84,12 @@ Make sure you have the following installed on your machine:
    ```bash
    DB_PASS=<db_password>
    DB_USER=<db_username>
-   DB_NAME=USER_DB
-   DB_COL=users
-   EMAIL=akas076@gmail.com
-   PASS=gwsf mhsm iyzb fbsm
-   PORT=8080
+   DB_NAME=SUPPORT_DB
+   DB_COL1=issues
+   DB_COL2=last_request_time
+   PORT=<port_number>
    ```
-   ### Replace <db_password> and <db_username> with your actual database password and username.
+   ### Replace <db_password>, <db_username>, and <port_number> with your actual database password, username of your mongodb database, and the port where you want to run the project.
 
 5. Run the project in development mode:
    ```bash
