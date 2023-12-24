@@ -95,4 +95,4 @@ Make sure you have the following installed on your machine:
    ```bash
    npm run dev
    ```
-   The application will be accessible at http://localhost:8080. You need third-part api client(such as POSTMAN) to access the api.
+   The application will be accessible at http://localhost:<port_number>. You need third-part api client(such as POSTMAN) to access the api.
