@@ -27,7 +27,7 @@ app.get("/", (req, res) => {
   async function run() {
     try {
       await client.connect();
-      console.log("Connected correctly to server");
+      console.log("DB Connected correctly to server");
     
       const issueCollection = client.db(process.env.DB_NAME).collection(process.env.DB_COL1);
       const lastRequestTimeCollection = client.db(process.env.DB_NAME).collection(process.env.DB_COL2);
@@ -46,7 +46,7 @@ app.get("/", (req, res) => {
 
             const previousRequestTime = new Date(documents[0].lastRequestTime).getTime();;
             const currentRequestTime = new Date(date).getTime();
-            const elapsedTime = (currentRequestTime - previousRequestTime)/1000;
+            const elapsedTime = (currentRequestTime - previousRequestTime)/(1000 * 60);
 
             if( elapsedTime > 30) {  
                 const result = await issueCollection.insertOne(req.body);
@@ -83,5 +83,5 @@ app.get("/", (req, res) => {
   run().catch(console.dir);
 
   app.listen(process.env.PORT || 8085,()=>{
-    console.log("server listening 8085")
+    console.log(`server listening ${process.env.PORT}`)
   });
